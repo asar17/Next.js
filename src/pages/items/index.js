@@ -1,10 +1,13 @@
 import Link from 'next/link'
-const Items =({itemsId=10})=>{
+import {useRouter} from 'next/router'
+const Items =()=>{
+   const router=useRouter()
+   const {itemsId}=router.query
     return(
         <div>
             <h1>items page</h1>
             <Link href={`/items/${itemsId}`}>
-              <h5>items {itemsId}</h5>
+              items {itemsId}
             </Link>
         </div>
     )

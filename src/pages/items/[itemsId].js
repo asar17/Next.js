@@ -1,8 +1,7 @@
 import {useRouter} from 'next/router'
 const ItemDetail =()=>{
     const router=useRouter()
-    console.log(router.query)
-    const itemsId=router.query.itemsId
+    const {itemsId}=router.query
     return(
         <div>
             <h1>items detail {itemsId} </h1>
