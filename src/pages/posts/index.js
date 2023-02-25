@@ -17,8 +17,9 @@ const PostList =({posts})=>{
 }
 export default PostList
 
-{/* using getStaticProps to fetch posts from external api  */}
 
+
+{/* using getStaticProps to fetch posts from external api  */}
 export const getStaticProps =async () =>{
     const res=await fetch ('https://jsonplaceholder.typicode.com/posts')
     const data=await res.json()
