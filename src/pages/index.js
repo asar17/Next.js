@@ -22,6 +22,10 @@ const Home =()=>{
             <button onClick={handleNavigate}>
                 Place Order
             </button>
+            {/*  navigate to posts page*/}
+            <Link href="/posts">
+              <h2>All Posts</h2>
+            </Link>
         </div>
     )
 }
