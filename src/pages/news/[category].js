@@ -16,10 +16,13 @@ const NewsByCategory =({news})=>{
 export default NewsByCategory
 
 export const getServerSideProps  =async(context)=>{
-    const {params}=context
+    const {params,req,res,query}=context
     const {category}=params
-    const res=await fetch(`http://localhost:4000/news?category=${category}`)
-    const data=await res.json()
+    console.log(req.headers.cookie)
+    console.log(query)
+    res.setHeader('Set-Cookie',['name=athar'])
+    const result=await fetch(`http://localhost:4000/news?category=${category}`)
+    const data=await result.json()
     return{
         props:{
             news:data,
