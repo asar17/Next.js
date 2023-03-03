@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import Link from 'next/link'
 const Comments =()=>{
     const [comments,setComments]=useState([])
     const [comment,setComment]=useState('')
@@ -32,7 +33,9 @@ const Comments =()=>{
           {comments?.map((comment)=>{
             return(
                 <div key={comment.id}>
-                    <h1>{comment.id} | {comment.text}</h1>
+                    <Link href={`/comments/${comment.id}`}>
+                      <h1>{comment.id} | {comment.text}</h1>
+                    </Link>
                     <button onClick={()=>deleteComment(comment.id)}>delete</button>
                 </div>
             )
