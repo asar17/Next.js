@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-
+import Header from '../components/Header'
 const DashboardSwr =()=>{
     const fetcher =async()=>{
         const res=await fetch('http://localhost:4000/dashboard')
@@ -20,3 +20,12 @@ const DashboardSwr =()=>{
     )
 }
 export default DashboardSwr
+
+DashboardSwr.getLayout=function PageLayout (page){
+    return(
+        <>
+         <Header/>
+         {page}
+        </>
+    )
+}

@@ -1,3 +1,4 @@
+import Footer from '../components/Footer'
 const ProfileName =()=>{
     return(
         <div>
@@ -6,3 +7,13 @@ const ProfileName =()=>{
     )
 }
 export default ProfileName
+
+ProfileName.getLayout=function PageLayout (page){
+    return(
+        <>
+          {page}
+          <Footer/>
+        </>
+    )
+
+}
