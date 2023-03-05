@@ -1,0 +1,10 @@
+.all{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between
+}
+.all-child2{
+    display:flex;
+    gap:30px;
+    margin-top:10px;
+}
