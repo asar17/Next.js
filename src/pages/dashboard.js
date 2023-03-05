@@ -1,5 +1,5 @@
-import {useState,useEffect} from 'react'
-
+import {useState,useEffect} from 'react' 
+import {getSession,signIn} from 'next-auth/react'
 const Dashboard =()=>{
     const [allData,setAllData]=useState(null)
     const fetchData=async()=>{
@@ -7,8 +7,16 @@ const Dashboard =()=>{
         const data=await res.json()
         setAllData(data)
     }
+    const securePage = async()=>{
+        const session =await getSession()
+        if(!session){
+            signIn()
+        }
+
+    }
     useEffect(()=>{
         fetchData()
+        securePage()
     },[])
     return(
         <div>
