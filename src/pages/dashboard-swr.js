@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import Header from '../components/Header'
+import Header from '../components/layout/Header'
 const DashboardSwr =()=>{
     const fetcher =async()=>{
         const res=await fetch('http://localhost:4000/dashboard')
